@@ -1,13 +1,12 @@
 * {
   box-sizing: border-box;
 }
-
-html,body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-size: 10px;
 }
-
 body {
   background-color: #fff;
   color: #222;
@@ -17,48 +16,49 @@ body {
   line-height: 1.7;
   padding-bottom: 1em;
   -webkit-font-smoothing: antialiased;
-
-  @media screen and (max-width: 960px) {
+}
+@media screen and (max-width: 960px) {
+  body {
     font-size: 18px;
   }
-  @media screen and (max-width: 640px) {
+}
+@media screen and (max-width: 640px) {
+  body {
     font-size: 16px;
   }
-  @media screen and (min-width: 481px) {
+}
+@media screen and (min-width: 481px) {
+  body {
     margin: 1em;
     border: 1px solid #ccc;
   }
 }
-
 @-webkit-keyframes move-bg {
   from {
-    background-position: 0% 0%
+    background-position: 0% 0%;
   }
   to {
-    background-position: 200% 0%
+    background-position: 200% 0%;
   }
 }
-
 a {
   text-decoration: none;
   position: relative;
-
-  &:hover {
-    text-decoration: none;
-
-    &:after {
-      content: '';
-      background-image: url('img/underline.svg');
-      background-size: 0.4em;
-      background-repeat: repeat-x;
-      position: absolute;
-      top: 90%;
-      left: 0;
-      width: 100%;
-      height: 0.25em;
-      animation: move-bg 30s linear infinite;
-    }
-  }
+}
+a:hover {
+  text-decoration: none;
+}
+a:hover:after {
+  content: '';
+  background-image: url('img/underline.svg');
+  background-size: 0.4em;
+  background-repeat: repeat-x;
+  position: absolute;
+  top: 90%;
+  left: 0;
+  width: 100%;
+  height: 0.25em;
+  animation: move-bg 30s linear infinite;
 }
 ::-moz-selection {
   background: blue;
@@ -68,13 +68,14 @@ a {
   background: blue;
   color: #fff;
 }
-
 :focus {
   box-shadow: 0 0 0 3px blue;
   outline: 0px;
 }
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: 400;
   margin-bottom: 0.4em;
   line-height: 1.1;
@@ -100,9 +101,7 @@ p {
 small,
 .small {
   font-size: 0.85em;
-
 }
-
 .heading {
   font-size: 10vw;
 }
@@ -110,15 +109,15 @@ small,
   line-height: 1.6;
   max-width: 19em;
 }
-
 .container {
   max-width: 42em;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
-
-  @media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 480px) {
+  .container {
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -126,19 +125,17 @@ small,
 .btn {
   padding: 0.9em 1.25em;
   border-width: 2px;
-  border-color: rgba(255,255,255,0.15);
+  border-color: rgba(255, 255, 255, 0.15);
   border-style: dashed;
   transition: border 0.2s ease-out;
   display: inline-block;
   vertical-align: middle;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border-color: blue;
-  }
 }
-
+.btn:hover,
+.btn:active,
+.btn:focus {
+  border-color: blue;
+}
 .logo {
   right: 0;
   padding: 0;
@@ -151,54 +148,46 @@ small,
 .section {
   padding-top: 2em;
   padding-bottom: 2em;
-
-  + .section {
-    padding-top: 0;
-  }
 }
-
+.section + .section {
+  padding-top: 0;
+}
 .sites-list {
   list-style: none;
   padding-left: 0;
-
-  &:before,
-  &:after {
-    content: ' ';
-    display: table;
-    width: 100%;
-  }
+}
+.sites-list:before,
+.sites-list:after {
+  content: ' ';
+  display: table;
+  width: 100%;
 }
 .site {
   padding: 0.5em 0.5em 0.5em 0;
   border-top: 1px solid #ccc;
   overflow: hidden;
   text-overflow: ellipsis;
-
-
-  &:last-child {
-    border-bottom: 1px solid #ccc;
-  }
-
-  a {
-    white-space: nowrap;
-
-    &:before {
-      content: '❤';
-      padding-right: 0.5em;
-      font-size: 0.85em;
-    }
-  }
-
-  @media screen and (min-width: 600px) {
+}
+.site:last-child {
+  border-bottom: 1px solid #ccc;
+}
+.site a {
+  white-space: nowrap;
+}
+.site a:before {
+  content: '❤';
+  padding-right: 0.5em;
+  font-size: 0.85em;
+}
+@media screen and (min-width: 600px) {
+  .site {
     width: 50%;
     float: left;
-
-    &:nth-last-child(2) {
-      border-bottom: 1px solid #ccc;
-    }
+  }
+  .site:nth-last-child(2) {
+    border-bottom: 1px solid #ccc;
   }
 }
-
 dt {
   font-size: 1.17em;
   font-weight: 700;
@@ -208,17 +197,13 @@ dd {
   margin-left: 0.1em;
   margin-bottom: 1.5em;
   padding-left: 1em;
-  font-size: 0.9em;
-
-  .lead {
-    font-size: 1.25em;
-  }
-
-  p {
-    max-width: 34em;
-  }
 }
-
+dd .lead {
+  font-size: 1.25em;
+}
+dd p {
+  max-width: 34em;
+}
 code {
   font-size: 0.9em;
   background-color: #eee;
@@ -229,21 +214,29 @@ code {
   word-wrap: break-word;
   word-break: break-all;
 }
-
-footer {
-  p {
-    font-size: 0.7em;
-
-    @media screen and (max-width: 767px) {
-      letter-spacing: 0.05em;
-    }
+footer p {
+  font-size: 0.7em;
+}
+@media screen and (max-width: 767px) {
+  footer p {
+    letter-spacing: 0.1em;
   }
 }
-
-
 @media screen and (max-width: 768px) {
-  .heading { font-size: 14vw; }
-  .event-details > li { width: 100%; display: block; margin-bottom: 1.5em; margin-right: 0; }
-  a,.btn { border-width: 1px; }
-  a { padding-bottom: 0.15em; }
+  .heading {
+    font-size: 14vw;
+  }
+  .event-details > li {
+    width: 100%;
+    display: block;
+    margin-bottom: 1.5em;
+    margin-right: 0;
+  }
+  a,
+  .btn {
+    border-width: 1px;
+  }
+  a {
+    padding-bottom: 0.15em;
+  }
 }
