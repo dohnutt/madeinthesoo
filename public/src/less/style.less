@@ -96,6 +96,10 @@ p {
   margin-top: 0.5em;
   margin-bottom: 1rem;
   max-width: 30em;
+
+  + ul {
+    margin-top: -0.5rem;
+  }
 }
 small,
 .small {
@@ -139,15 +143,28 @@ small,
   }
 }
 
-.logo {
-  right: 0;
-  padding: 0;
-  position: absolute;
-  text-align: right;
-  top: 0;
-  max-width: 100%;
-  width: 360px;
+.list-inline {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 0.75em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
+
+.muted {
+  &,
+  a&,
+  a {
+    color: #aaa;
+  }
+}
+
 .section {
   padding-top: 2em;
   padding-bottom: 2em;
@@ -156,6 +173,7 @@ small,
     padding-top: 0;
   }
 }
+
 
 .sites-list {
   list-style: none;
@@ -231,12 +249,18 @@ code {
 }
 
 footer {
-  p {
+  p, ul {
     font-size: 0.7em;
 
     @media screen and (max-width: 767px) {
       letter-spacing: 0.05em;
     }
+  }
+}
+
+.prez {
+  .heading {
+    margin-left: -0.225em;
   }
 }
 
