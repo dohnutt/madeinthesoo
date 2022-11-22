@@ -13,4 +13,4 @@ I love Sault Ste. Marie. I love web development. If you're interested in the who
 Cool! It's really easy. Here's how:
 
 1. Add this code somewhere on your site: `<a href="https://madeinthesoo.ca/">Made with ❤ in the Soo</a>`
-2. [Send me an email](mailto:eric@ericmoss.ca) or [create a pull request](https://github.com/dohnutt/madeinthesoo/pulls)—whichever you're most comfortable with. Include your name, your website URL, and a sentence or two about your website.
+2. [Create a pull request](https://github.com/dohnutt/madeinthesoo/pulls)—whichever you're most comfortable with. Include your name, your website URL, and a sentence or two about your website.
