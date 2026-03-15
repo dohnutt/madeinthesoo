@@ -10,7 +10,7 @@ Sault Ste. Marie is a great place to call home, and it's full of talented web de
 
 - to empower local developers and designers;
 - to highlight the Sault Ste. Marie tech community;
-- and to raise awareness of the talent in the Soo.
+- and to raise awareness about the talent in the Soo.
 
 ## How do you decide which sites to list?
 
