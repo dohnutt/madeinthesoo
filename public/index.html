@@ -94,27 +94,25 @@
 	</footer>
 
 	<script>
-	const searchInput = document.getElementById('search');
-	const sites = document.querySelectorAll('#sites li');
-	const noResults = document.getElementById('no-results');
+	document.addEventListener('input', function(e) {
+		if (e.target.id === 'search') {
+			const query = e.target.value.toLowerCase();
 
-	searchInput.addEventListener('input', function() {
-		const query = this.value.toLowerCase();
+			document.querySelectorAll('#sites li').forEach(site => {
+				const siteText = site.textContent.toLowerCase();
+				if (siteText.includes(query)) {
+					site.style.display = '';
+				} else {
+					site.style.display = 'none';
+				}
+			});
 
-		sites.forEach(site => {
-			const siteText = site.textContent.toLowerCase();
-			if (siteText.includes(query)) {
-				site.style.display = '';
+			const count = document.querySelectorAll('#sites li:not([style*="none"])').length;
+			if (count === 0) {
+				document.getElementById('no-results').textContent = 'No sites to show. Try adjusting your search?';
 			} else {
-				site.style.display = 'none';
+				document.getElementById('no-results').textContent = '';
 			}
-		});
-
-		const count = document.querySelectorAll('#sites li:not([style*="none"])').length;
-		if (count === 0) {
-			noResults.textContent = 'No sites to show. Try adjusting your search?';
-		} else {
-			noResults.textContent = '';
 		}
 	});
 	</script>
