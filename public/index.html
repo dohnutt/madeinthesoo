@@ -119,6 +119,15 @@
 	});
 	</script>
 
+	<script>
+	const flagEmojiToPNG = (flag) => {
+		var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt()).map(char => String.fromCharCode(char-127397).toLowerCase()).join('')
+		return '<img src="img/flag.png" class="flag">';
+	}
+    var reg = new RegExp('(?:\ud83c[\udde6-\uddff]){2}', 'g');
+    document.body.innerHTML = document.body.innerHTML.replaceAll(reg, flagEmojiToPNG);
+	</script>
+
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2HMRXKDL4"></script>
 	<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-K2HMRXKDL4');</script>
 </body>

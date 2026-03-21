@@ -28,6 +28,11 @@ body {
 	to { background-position: 200% 0% }
 }
 
+@keyframes move-bg-visited {
+	from { background-position: 0% 0% }
+	to { background-position: 200% 0% }
+}
+
 a {
 	text-decoration: none;
 	position: relative;
@@ -37,7 +42,7 @@ a:hover {
 	text-decoration: none;
 }
 
-a:after {
+a::after {
 	content: '';
 	position: absolute;
 	top: 100%;
@@ -46,13 +51,15 @@ a:after {
 	height: 0.3em;
 	background-size: 0.4em;
 	background-repeat: repeat-x;
-}
-
-a:hover:after {
-	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10"><path fill="none" stroke="blue" stroke-miterlimit="10" stroke-width="2" d="m21 8.5-7-7-7 7-7-7-7 7"/></svg>');
 	-webkit-animation: move-bg 30s linear infinite;
 	animation: move-bg 30s linear infinite;
 }
+
+a:hover::after {
+	background-image: url('./img/underline.svg');
+	
+}
+
 
 h1, h2, h3 {
 	font-weight: 700;
@@ -73,6 +80,12 @@ p + ol {
 
 li + li {
 	margin-block-start: 0.25em;
+}
+
+.flag {
+	width: 1em;
+	height: auto;
+	vertical-align: middle;
 }
 
 .sr-only {
@@ -166,7 +179,15 @@ input[type="search"] {
 }
 
 #sites li:before {
-	content: "🇨🇦";
+	content: '' / 'Canada flag';
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url('./img/flag.png');
+	background-size: 1em;
+	background-position: center;
+	background-repeat: no-repeat;
 	margin-inline-end: 0.5em;
 	font-size: 0.85em;
 }
@@ -251,7 +272,7 @@ footer ul {
 }
 
 @media (prefers-reduced-motion) {
-	a:hover:after {
+	a:hover::after {
 		animation-play-state: paused;
 	}
 	
